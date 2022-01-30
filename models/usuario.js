@@ -44,8 +44,8 @@ const usuarioSchema=Schema({  //objeto literal
 
  usuarioSchema.methods.toJSON=function(){//sobreescribimos el metodo, usamos funcion en vez => para el this
 
-    const {__v, password, ...usuario}=this.toObject(); //sacamos solo v y password
-
+    const {__v, password, _id, ...usuario}=this.toObject(); //sacamos solo v y password y dejamos el resto del usuario
+    usuario.uid=_id; //cambiamos el _id por el uid
     return usuario;
  }
 module.exports=model('Usuario', usuarioSchema);

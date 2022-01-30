@@ -90,11 +90,13 @@ const usuariosGet=async(req=request, res=response)=> {
 
     const{id}=req.params;
 
+   // const uid=req.uid;
     //FISICAMENTE
    // const usuario=await Usuario.findByIdAndDelete(id);
 
     //CAMBIAR EL ESTADO
     const usuario=await Usuario.findByIdAndUpdate(id,{estado:false});
+  //  const usuarioAutenticado=req.usuario;
 
     res.json(usuario);
  }
