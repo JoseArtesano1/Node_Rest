@@ -8,5 +8,5 @@ module.exports={
 
     ...validarCampos,   //usando express
     ...validarJWT,
-    ...validarRoles,
+    ...validarRoles
 }
